@@ -1,0 +1,17 @@
+#version: '3.7'  # Specify the version of Docker Compose syntax being used
+
+services:
+  loans:
+    image: "santoshlimbale76/loans"  # Make sure to include a space after the colon
+    container_name: loans-ms  # Corrected indentation and added a space between container_name and its value
+    ports:
+      - "8088:8080"  # Indent ports under the loans service definition
+    deploy:
+      resources:
+        limits:
+          memory: 700m  # Corrected indentation and added a space between memory and its value
+    networks:
+      - eazybank  # Removed extra indentation and corrected the network definition
+networks:
+  eazybank:
+    driver: bridge  # Corrected indentation and removed quotes around "bridge"
